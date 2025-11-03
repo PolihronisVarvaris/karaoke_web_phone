@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karaoke Mic | Phone Microphone</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="phone-interface">
+    <div class="container">
+        <div class="phone-header">
+            <div class="logo">
+                <i class="fas fa-microphone-alt"></i>
+                <h1>Karaoke Mic</h1>
+            </div>
+            <p class="subtitle">Your phone is now a wireless microphone</p>
+        </div>
+
+        <div class="phone-content">
+            <div class="connection-info">
+                <div class="room-display">
+                    <i class="fas fa-door-open"></i>
+                    <span id="roomName">Connecting...</span>
+                </div>
+                <div class="connection-status">
+                    <div class="status-indicator" id="phoneStatusIndicator"></div>
+                    <span id="phoneStatusText">Initializing...</span>
+                </div>
+            </div>
+
+            <div class="mic-visual">
+                <div class="mic-icon" id="micIcon">
+                    <i class="fas fa-microphone"></i>
+                </div>
+                <div class="mic-level">
+                    <div class="level-bar">
+                        <div class="level-fill" id="levelFill"></div>
+                    </div>
+                    <span id="micLevelText">0%</span>
+                </div>
+            </div>
+
+            <div class="phone-controls">
+                <button id="toggleMic" class="mic-button active">
+                    <i class="fas fa-microphone"></i>
+                    <span>Microphone On</span>
+                </button>
+                
+                <button id="disconnectBtn" class="secondary">
+                    <i class="fas fa-sign-out-alt"></i>
+                    Disconnect
+                </button>
+            </div>
+
+            <div class="visualizer" id="phoneVisualizer">
+                <!-- Visualizer bars -->
+            </div>
+
+            <div class="phone-stats">
+                <div class="stat">
+                    <i class="fas fa-wifi"></i>
+                    <span id="connectionQuality">Good</span>
+                </div>
+                <div class="stat">
+                    <i class="fas fa-clock"></i>
+                    <span id="connectionTime">0:00</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="phone-footer">
+            <p>Sing into your phone - audio will play through PC speakers</p>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="phone.js"></script>
+</body>
+</html>
